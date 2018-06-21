@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<h1>{{author_bio.user}}</h1>   <img src="{{ author_bio.Photo.url }}" height="100">
+<br><br>
+<p>{{author_bio.bio}}</p>
+
+<hr>
+<h2>Blogs</h2>
+<ul>
+{% for blog in author_bio.blog_set.all %}
+
+<li><a href="{% url 'blog-details' blog.id  %}"> {{blog}}</a></li>
+
+{% endfor %}
+</ul>
+
+{% endblock %}

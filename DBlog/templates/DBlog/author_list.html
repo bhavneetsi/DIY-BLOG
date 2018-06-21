@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1><center>Bloggers</center></h1>
+<br><br>
+
+{% if author_bio_list %}
+<ul>
+
+    {% for blogger in author_bio_list %}
+
+        <li>
+            <a href="{{ blogger.get_absolute_url }}" >{{ blogger }}</a>
+        </li>
+    {% endfor %}    
+</ul>
+{% endif %}
+{% endblock %}
